@@ -1,0 +1,59 @@
+.header {
+  position: fixed;
+  top: 0px;
+  width: calc(100% - 250px);
+  left: 250px;
+  display: flex;
+  padding: 21px 40px 20px;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--light-border);
+  background-color: var(--color-black);
+  z-index: 1000;
+  font-size: 13px;
+}
+.pageName {
+  font-family: 'Inter-Medium';
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 29.05px;
+  text-align: left;
+  color: var(--color-white);
+}
+.heightCompensator {
+  height: 81px;
+}
+img.logo {
+  width: 130px;
+  cursor: pointer;
+}
+.middle {
+  padding: 8px 20px;
+  background: var(--color-global);
+  border-radius: 6px;
+  color: black;
+  width: 45%;
+  text-align: center;
+  max-width: 600px;
+  .credit {
+    color: var(--color-blue);
+    font-family: Inter-SemiBold;
+  }
+  .creditLabel {
+    color: #000;
+    font-family: "Inter-Regular";
+  }
+}
+.right {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.wallet {
+  margin-right: 20px;
+}
+[data-theme="dark"] {
+  .creditLabel {
+    color: white;
+  }
+}

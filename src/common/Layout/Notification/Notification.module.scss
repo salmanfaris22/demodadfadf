@@ -1,0 +1,61 @@
+.notification {
+  position: relative;
+}
+.notificationWrap {
+  margin: 0px 10px;
+  padding: 0px 0px;
+  position: relative;
+}
+img.icon {
+  padding: 0px 10px;
+  cursor: pointer;
+  transform: rotate(0deg);
+  /* animation: shake 500ms infinite ease-in; */
+}
+.dot {
+  position: absolute;
+  background: rgba(254, 68, 69, 1);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  top: 2px;
+  right: 10px;
+  animation: blink 1000ms infinite ease-in;
+}
+@keyframes blink {
+  0% {
+    width: 0px;
+    height: 0px;
+    opacity: 0;
+    right: 16px;
+    top: 7px;
+  }
+  50% {
+    width: 6px;
+    height: 6px;
+    opacity: 1;
+    right: 10px;
+    top: 2px;
+  }
+  100% {
+    width: 0px;
+    height: 0px;
+    opacity: 0;
+    right: 16px;
+    top: 7px;
+  }
+}
+@keyframes shake {
+  25% {
+    transform: rotate(-45deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(45deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}

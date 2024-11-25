@@ -1,0 +1,63 @@
+:root {
+  --scrollbar-bg: #f1f1f1;
+  --scrollbar-thumb: #888;
+  --scrollbar-thumb-hover: #555;
+}
+
+[data-theme="dark"] {
+  --scrollbar-bg: #2c2c2c;
+  --scrollbar-thumb: #888;
+  --scrollbar-thumb-hover: #555;
+}
+
+/* Webkit browsers (Chrome, Safari, Edge) */
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--scrollbar-bg); /* color of the tracking area */
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb); /* color of the scroll thumb */
+  border-radius: 10px; /* roundness of the scroll thumb */
+  border: 3px solid var(--scrollbar-bg); /* creates padding around scroll thumb */
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: var(
+    --scrollbar-thumb-hover
+  ); /* color of the scroll thumb when hovered */
+}
+
+/* Firefox */
+html {
+  scrollbar-width: thin; /* auto, thin, or none */
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-bg); /* thumb color, track color */
+}
+
+*::-moz-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb);
+  border-radius: 10px; /* roundness of the scroll thumb */
+  border: 3px solid var(--scrollbar-bg);
+}
+
+/* IE 10+ and Edge */
+body {
+  -ms-overflow-style: -ms-autohiding-scrollbar; /* show auto-hiding scrollbars */
+}
+
+/* General Styling for Edge Legacy */
+@supports (-ms-overflow-style: none) {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-bg);
+  }
+}
+
+/* General Styling for all other browsers */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-bg);
+}

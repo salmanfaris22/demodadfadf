@@ -1,0 +1,72 @@
+@import url("scrollbar.scss");
+@import url("color.scss");
+
+@font-face {
+  font-family: "Inter-Regular";
+  src: url("../public/assets/fonts/static/Inter-Regular.ttf");
+}
+@font-face {
+  font-family: "Poppins-Medium";
+  src: url("../public/assets/fonts/poppins/Poppins-Medium.ttf");
+}
+@font-face {
+  font-family: "Inter-Medium";
+  src: url("../public/assets/fonts/static/Inter-Medium.ttf");
+}
+@font-face {
+  font-family: "Inter-SemiBold";
+  src: url("../public/assets/fonts/static/Inter-SemiBold.ttf");
+}
+@font-face {
+  font-family: "Inter-Bold";
+  src: url("../public/assets/fonts/static/Inter-Bold.ttf");
+}
+@font-face {
+  font-family: "Inter-Light";
+  src: url("../public/assets/fonts/static/Inter-Light.ttf");
+}
+@font-face {
+  font-family: "Poppins-Regular";
+  src: url("../public/assets/fonts/poppins/Poppins-Regular.ttf");
+}
+@font-face {
+  font-family: "Poppins-SemiBold";
+  src: url("../public/assets/fonts/poppins/Poppins-SemiBold.ttf");
+}
+@font-face {
+  font-family: "Poppins-Bold";
+  src: url("../public/assets/fonts/poppins/Poppins-Bold.ttf");
+}
+@font-face {
+  font-family: "Poppins-Light";
+  src: url("../public/assets/fonts/poppins/Poppins-Light.ttf");
+}
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 14px;
+  line-height: 20px;
+  color-scheme: light dark;
+  color: var(--font-color);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  font-family: "Inter-Regular";
+  scroll-behavior: smooth;
+}

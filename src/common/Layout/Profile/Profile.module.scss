@@ -1,0 +1,44 @@
+.profileWrap {
+  position: relative;
+}
+.profileImage {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+  margin-top: -5px;
+}
+.defaultImg {
+  padding: 15px;
+  background-position: center;
+  background-size: auto;
+  background-color: var(--color-global);
+}
+
+.logout {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background: white;
+  padding: 10px 20px 10px 10px;
+  position: absolute;
+  box-shadow: 2px 2px 4px 1px #d7d7d7;
+  right: 0px;
+  top: 45px;
+  border-radius: 10px;
+  color: #5d5d5d;
+  font-size: 14px;
+  cursor: pointer;
+  &:hover {
+    background-color: #f5f5f5;
+  }
+  img {
+    height: 30px;
+    width: auto;
+    margin-right: 16px;
+    margin-left: 10px;
+  }
+}

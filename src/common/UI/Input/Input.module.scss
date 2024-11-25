@@ -1,0 +1,93 @@
+.inputBox {
+  resize: none;
+  outline: none;
+  border: 0px;
+  padding: 10px 15px;
+  margin: 0px;
+  color: rgba(61, 61, 61, 1);
+  font-family: "Inter-Medium";
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 17px;
+  letter-spacing: 0em;
+  text-align: left;
+  background: var(--color-global);
+  width: 100%;
+  border-radius: 6px;
+  height: 40px;
+  box-shadow: 0px 0px 0px 0px;
+  border: 1px solid var(--color-global);
+  &.center {
+    text-align: center;
+  }
+  &.white {
+    background-color: white;
+    border: 1px solid rgba(203, 213, 225, 1);
+    font-family: "Inter-Regular";
+  }
+  &::placeholder {
+    opacity: 0.6;
+  }
+}
+.inputBox:focus {
+  box-shadow: 0px 4px 10px 3px rgba(0, 0, 0, 0.11);
+  border: 1px solid var(--color-side-bar-active-font);
+  background-color: white;
+}
+.inputBox:disabled {
+  cursor: not-allowed;
+}
+.inputBox[type="password"] {
+  padding-right: 50px;
+}
+.inputWrap {
+  position: relative;
+}
+.passwordWrap {
+  position: absolute;
+  right: 16px;
+  top: 12px;
+  padding: 5px;
+  cursor: pointer;
+  opacity: 0.7;
+}
+.passwordWrap img {
+  width: 18px;
+}
+.cross {
+  left: 0px;
+  width: 22px;
+  height: 2px;
+  background: rgb(115 115 115);
+  position: absolute;
+  top: 12px;
+  transform: rotate(38deg);
+  left: 3px;
+}
+
+[data-theme="dark"] {
+  .inputBox {
+    background-color: var(--color-light-white);
+    color: var(--color-filter-label-gray);
+  }
+  .inputBox:focus {
+    background-color: var(--color-light-white);
+  }
+  .inputBox::placeholder {
+    color: var(--color-filter-label-gray);
+    opacity: 0.4;
+  }
+  .inputBox:-internal-autofill-selected,
+  .inputBox:-moz-autofill,
+  .inputBox:-webkit-autofill,
+  .inputBox:-webkit-autofill:hover,
+  .inputBox:-webkit-autofill:focus {
+    background-color: var(--color-light-white);
+    color: var(--color-filter-label-gray);
+    -webkit-text-fill-color: #000;
+    -webkit-box-shadow: 0 0 0px 1000px #f1f1f1 inset;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: #ffffff;
+    transition: background-color 5000s ease-in-out 0s;
+  }
+}

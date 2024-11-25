@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LIQ</title>
+    <style>
+      html,
+      body {
+        padding: 0px;
+        margin: 0px;
+      }
+      .loading {
+        height: 100vh;
+        background-color: #181818;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: Inter-Regular;
+        color: white;
+      }
+      .load {
+        font-family: Inter-Medium;
+      }
+      .load2 {
+        font-family: Inter-SemiBold;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="toast"></div>
+    <div id="modal"></div>
+    <div id="root">
+      <div class="loading">
+        Loading
+        <span class="load">..<span class="load2">.</span></span>
+      </div>
+    </div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
