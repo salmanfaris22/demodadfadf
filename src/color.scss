@@ -1,10 +1,16 @@
 :root {
   --color-white: white;
   --color-black: #000;
-  --light-border: rgba(45, 45, 45, 1);
+  --light-border: #B8B8B8;
   --font-color: rgba(226, 226, 226, 1);
   --color-blue: rgba(0, 103, 255, 1);
   --color-gray: rgba(11, 11, 11, 1);
+  --color-sub-text: #0067FF;
+
+  --radius-main:10px;
+
+
+
 }
 
 [data-theme="dark"] {
@@ -14,3 +20,4 @@
   --color-blue: rgba(0, 103, 255, 1);
   --color-gray: rgba(11, 11, 11, 1);
 }
+

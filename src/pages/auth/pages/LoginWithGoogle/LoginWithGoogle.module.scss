@@ -1,0 +1,14 @@
+.layOut{
+    border: 1px solid #DCDCDC;
+    background: var(--color-white);
+    width: 100%;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: var(--color-black);
+    display: flex;
+    align-items: center;
+justify-content: center; 
+cursor: pointer;
+gap: 10px;
+}
+

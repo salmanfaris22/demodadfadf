@@ -1,0 +1,134 @@
+.loginPage {
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    flex-direction: column; /* Change layout on smaller screens */
+
+    h2 {
+      font-family: "Helvetica", sans-serif;
+      font-weight: bold; /* Heavier bold */
+      line-height: 46px;
+      width: 100%; /* Adjust width to fit smaller screens */
+      text-align: center; /* Center text */
+      color: var(--color-black);
+    }
+  }
+  
+  .wrap {
+    height: auto; /* Let the height adjust based on content */
+    width: 100%; /* Make it responsive */
+    max-width: 420px; /* Keep the max width for larger screens */
+  }
+  
+  .loginButton {
+    width: 100%; /* Ensure button spans full width */
+  }
+  
+  .subText {
+    height: 50px;
+    color: var(--color-sub-text);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .subText2 {
+    color: var(--color-black);
+    display: flex;
+    width: 100%;
+   
+    gap: 3px;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .border {
+    display: flex;
+    color: var(--light-border);
+    margin-top: 40px;
+    align-items: center;
+  }
+  
+  .line {
+    border-left: 1px solid var(--light-border); /* Vertical line with left border */
+    background: var(--light-border);
+    width: 100%;
+    height: 1px;
+  }
+  
+  .lineText {
+    margin-left: 20px;
+
+
+    margin-right: 20px;
+  }
+  
+  .facebookIcon {
+    height: 45px;
+    width: 45px;
+    cursor: pointer;
+  }
+  
+  .moreLoginBtn {
+    display: flex;
+    gap: 30px;
+    margin-top: 15px;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  
+  /* Media Queries for Responsiveness */
+  @media (max-width: 768px) {
+    .loginPage {
+      padding: 20px;
+  margin-top: 40px;
+      flex-direction: column; /* Stack content vertically */
+    }
+  
+    .wrap {
+      width: 100%; /* Take full width of the screen */
+      max-width: 320px; /* Adjust for smaller screens */
+    }
+  
+    h2 {
+      width: 100%;
+      font-size: 18px; /* Reduce font size */
+      text-align: center;
+    }
+  
+    .moreLoginBtn {
+      justify-content: center; /* Center buttons on smaller screens */
+      gap: 15px; /* Reduce spacing */
+    }
+  
+    .lineText {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .facebookIcon {
+      height: 35px;
+      width: 35px; /* Adjust icon size */
+    }
+  
+    .subText {
+      height: auto;
+      font-size: 14px; /* Smaller text */
+      justify-content: center; /* Center align text */
+    }
+  
+    .subText2 {
+      font-size: 14px; /* Smaller text */
+      gap: 2px;
+    }
+  
+    .loginButton {
+      font-size: 14px; /* Adjust button font size */
+    }
+  }
+  
