@@ -16,7 +16,7 @@ const CollectEmail: React.FC = () => {
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Email:", email);
-
+    redirect("/otp/2");
   };
 
   return (
@@ -34,7 +34,7 @@ const CollectEmail: React.FC = () => {
         />
         <Button
          onClick={() => {
-            redirect(`/otp/${email}`);
+            redirect("/otp/2");
           }}
         label="Get OTP" type="submit" className={classes.loginButton} />
 

@@ -15,7 +15,7 @@
     border-left: 1px solid #ddd;
     position: fixed;
     right: 0;
-    top: 75px;
+    // top: 75px;
     z-index: 9999;
     height: 100vh;
     overflow-y: auto;
@@ -48,6 +48,10 @@
 
   .inputField {
     font-size: 13px;
+    line-height:35px;
+display: flex;
+flex-direction: column;
+
     // color: var(--color-cardmain);
     // border: 1px solid var(--color-cardborder);
     font-family: "Helvetica";
@@ -56,7 +60,9 @@
   
     margin: 0px !important;
   }
- 
+ .modalContent{
+    line-height:35px;
+ }
   .inputs{
     background-color: red;
   }

@@ -45,7 +45,7 @@ const LoginPage: React.FC = () => {
         />
         <div
          onClick={() => {
-          redirect("/otp/2");
+          redirect("/forgot");
         }}
         className={classes.subText}>Forgot Password ?</div>
         <Button label="Login" type="submit" className={classes.loginButton} />
