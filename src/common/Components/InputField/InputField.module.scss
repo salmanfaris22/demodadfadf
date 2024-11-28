@@ -1,7 +1,7 @@
 .inputField {
     margin-bottom: 20px;
   
-  
+
   
     .inputWrapper {
       display: flex;
@@ -14,11 +14,12 @@
         border: 1px solid #ccc;
         border-radius: 5px;
         font-size: 16px;
+       
         outline: none;
         background-color: var(--color-white);
         color: var(--color-black);
         transition: border-color 0.2s;
-  
+        
         &:focus {
           border-color: #007bff;
         }
@@ -30,6 +31,7 @@
         background: none;
         border: none;
         font-size: 16px;
+        
         cursor: pointer;
         color: #666;
   
@@ -42,9 +44,11 @@
   
   .fontLable {
     font-family: "Helvetica", sans-serif;
-    font-weight: bold; /* Heavier bold */
+    // font-weight: bold; /* Heavier bold */
 
     line-height: 46px;
     width: 450px;
     color: var(--color-black);
   }
+
+ 

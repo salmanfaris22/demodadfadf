@@ -51,7 +51,7 @@ const Profile = () => {
 
   return (
     <div className={classes.profileWrap}>
-      <div className="proWrap">
+      <div className={classes.proWrap}>
         <div
           onClick={loginLogout}
           className={`${classes.profileImage} ${
@@ -65,7 +65,10 @@ const Profile = () => {
             })`,
             // backgroundImage: `url(${"/assets/images/remove/removeLater.png"})`,
           }}
-        ></div>
+        >
+         
+        </div>
+        <div className={classes.dropDownMenu}><img src="/assets/images/dropDownMenu.png" alt="" /></div>
       </div>
       {showLogout && (
         <div className="logoutwrap">

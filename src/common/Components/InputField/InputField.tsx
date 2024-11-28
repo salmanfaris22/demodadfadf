@@ -8,6 +8,7 @@ interface InputFieldProps {
   value: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   className?: string;
+  inputClass?:string;
   showPasswordToggle?: boolean;
   togglePasswordVisibility?: () => void;
 }

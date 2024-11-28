@@ -6,6 +6,9 @@ import Login from "./pages/auth/pages/Login/Login";
 import Register from "./pages/auth/pages/Register/Register";
 import Otp from "./pages/auth/pages/Otp/Otp";
 import ForgotPassword from "./pages/auth/pages/Forgot/Forgot";
+import CollectEmail from "./pages/auth/pages/Forgot/ForgotEmail";
+import VerifyOtp from "./pages/auth/pages/VerifyEmail/Otp";
+import ParterInfo from "./pages/dashboard/page/PartnerInfo/ParterInfo";
 
 const Authentication = lazy(() => import("./pages/auth/Auth"));
 const Dashboard = lazy(() => import("./pages/dashboard/dashboard"));
@@ -19,7 +22,14 @@ const router = createBrowserRouter([
         <Dashboard />
       </Suspense>
     ),
-    children: [],
+    children: [  {
+      path: "partners",
+      element: (
+        <Suspense fallback={<Loading />}>
+          <ParterInfo />
+        </Suspense>
+      ),
+    },],
   },
   {
     path: "",
@@ -62,7 +72,7 @@ const router = createBrowserRouter([
         path: "forgot",
         element: (
           <Suspense fallback={<Loading />}>
-            <ForgotPassword />
+            <CollectEmail/>
           </Suspense>
         ),
       },
@@ -75,18 +85,18 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "reset",
+        path: "verify",
         element: (
           <Suspense fallback={<Loading />}>
-            {/* <Reset /> */}
+           <VerifyOtp />
           </Suspense>
         ),
       },
       {
-        path: "verify",
+        path: "reset",
         element: (
           <Suspense fallback={<Loading />}>
-            {/* <Verify /> */}
+           <ForgotPassword />
           </Suspense>
         ),
       },

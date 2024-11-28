@@ -1,0 +1,39 @@
+.searchContainer {
+    position: relative; /* Ensure the icon can be positioned relative to the container */
+    display: flex;
+    align-items: center;
+    height: 36px;
+    width: 230px;
+    max-width: 400px;
+    background: var(--color-cardmain);
+    border: 1px solid var(--color-cardborder);
+    border-radius: 5px;
+  }
+  
+  .searchInput {
+    flex-grow: 1;
+    padding: 8px 40px 8px 15px; /* Space for the search icon on the right */
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    background: transparent;
+    color: var(--color-text);
+  
+    &:focus {
+      outline: none;
+    }
+  }
+  
+  .searchIcon {
+   
+    position: absolute;
+    right: 10px; /* Adjust this value as needed */
+    top: 50%;
+    transform: translateY(-50%); /* Center vertically */
+    width: 20px;
+    height: 20px;
+    cursor: pointer; /* Optional: make it clickable */
+    pointer-events: none; /* Ensure it doesn't block input field clicks */
+  }
+  

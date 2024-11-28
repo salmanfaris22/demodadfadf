@@ -49,8 +49,8 @@
 :root {
   font-size: 14px;
   line-height: 20px;
-  color-scheme: light dark;
-  color: var(--font-color);
+  // color-scheme: light dark;
+  // color: var(--font-color);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -65,8 +65,8 @@ body {
   padding: 0;
   height: 100%;
   width: 100%;
-  background-color: var(--color-black);
-  color: var(--color-white);
-  font-family: "Inter-Regular";
+  // background-color: var(--color-black);
+  // color: var(--color-white);
+  font-family: "Helvetica";
   scroll-behavior: smooth;
 }

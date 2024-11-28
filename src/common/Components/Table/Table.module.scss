@@ -1,0 +1,138 @@
+.tableName {
+    font-family: "Helvetica";
+    font-size: 16px; /* Changed to a more appropriate font size */
+    font-weight: 300;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 10px;
+  }
+  
+  .arrow {
+    width: 7px;
+    height: 10px;
+  }
+  
+  .tableContainer {
+    margin: 20px;
+    overflow-x: auto; /* Enables horizontal scrolling for small screens */
+  }
+  
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid var(--color-cardborder);
+  }
+  
+  th {
+    width: 190px;
+    height: 50px;
+    background: var(--color-cardmain);
+    text-align: left;
+  }
+  
+  td {
+    padding: 8px;
+    text-align: left;
+    border-top: 1px solid var(--color-cardborder);
+    min-height: 50px;
+    vertical-align: top;
+  }
+  
+  .pagination {
+    display: flex;
+    justify-content: end;
+    margin-top: 10px;
+  }
+  
+  .pagination button {
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    background-color: var(--color-white);
+    cursor: pointer;
+  }
+  
+  .pagination button.active {
+    background-color: var(--color-black);
+    color: #fff;
+  }
+  
+  .name {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+  }
+  
+  .icon {
+    height: 31px;
+    width: 31px;
+    
+  }
+  
+  .details {
+    cursor: pointer;
+    color: var(--color-sub-text);
+    font-size: 14px;
+  }
+  
+  .tablebtn {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+  
+  .deleteicon {
+    height: 13px;
+    width: 13px;
+  }
+  
+  /* Add responsiveness for smaller screens */
+  @media (max-width: 768px) {
+    .tableName {
+      flex-direction: column; /* Stack elements vertically */
+      align-items: flex-start;
+    }
+  
+    th, td {
+      font-size: 14px; /* Adjust font size for smaller screens */
+    }
+  
+    .pagination {
+      justify-content: center; /* Center pagination on smaller screens */
+    }
+  
+    .tablebtn {
+      gap: 15px; /* Reduce gap between buttons */
+    }
+  
+    .icon, .deleteicon {
+      height: 20px; /* Resize icons */
+      width: 20px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .tableContainer {
+      padding: 10px;
+    }
+  
+    .table {
+      font-size: 12px; /* Smaller font for very small screens */
+    }
+  
+    th, td {
+      padding: 5px;
+    }
+  
+    .details {
+      font-size: 12px; /* Adjust details text size */
+    }
+  
+    .pagination {
+      flex-direction: column; /* Stack pagination buttons */
+      align-items: center;
+      gap: 5px;
+    }
+  }
+  

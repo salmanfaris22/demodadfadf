@@ -1,0 +1,88 @@
+.main {
+    color: var(--color-black);
+
+  }
+  .dashboard{
+    height: 100%;
+  }
+  .topWarap {
+    display: flex;
+    color: var(--color-black);
+    width: 100%;
+    font-family: "Helvetica", sans-serif;
+    font-weight: 400;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 20px 20px;
+    margin: auto;
+    font-size: 20px;
+  }
+  .tableMain{
+    background: var(--color-cardmain);
+    height: 100%;
+    padding: 20px;
+  }
+  /* Styling for text and span inside .topText */
+  .topText {
+    display: flex;
+    flex-direction: column;
+  
+    span {
+      font-size: 14px;
+      color: var(--color-subTextColor);
+    }
+  }
+  
+  .card {
+    display: flex;
+    flex-wrap: wrap; /* Allow the cards to wrap on smaller screens */
+    justify-content: space-between;
+    padding: 5px 20px 20px;
+    gap: 20px; /* Adds spacing between cards */
+    // margin-top: 20px;
+  }
+  
+  /* Media Queries for Responsiveness */
+  
+  /* For devices with width <= 768px (tablets and below) */
+  @media (max-width: 768px) {
+    .topWarap {
+      flex-direction: column; /* Stack items vertically on smaller screens */
+      align-items: flex-start;
+      font-size: 18px; /* Slightly smaller font on tablets */
+    }
+  
+    .topText {
+      span {
+        font-size: 12px; /* Smaller text for the span */
+      }
+    }
+  
+    .card {
+      justify-content: center; /* Center the cards for smaller screens */
+    }
+  }
+  
+  /* For devices with width <= 480px (mobile devices) */
+  @media (max-width: 480px) {
+    .topWarap {
+      padding: 20px;
+      font-size: 16px; /* Smaller font size for mobile */
+    }
+  
+    .card {
+      flex-direction: column; /* Stack the cards vertically */
+      align-items: center; /* Center the cards on mobile */
+      padding: 10px;
+    }
+  
+    .card > div {
+      width: 100%; /* Make each card take full width on mobile */
+      margin-bottom: 10px; /* Space between cards */
+    }
+  }
+  
+
+  .addPartner{
+    z-index: 9999;
+  }

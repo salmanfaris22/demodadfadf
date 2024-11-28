@@ -1,59 +1,144 @@
 .header {
   position: fixed;
   top: 0px;
-  width: calc(100% - 250px);
-  left: 250px;
+  width: 100%;
+  height: 75px;
+  margin: auto;
   display: flex;
-  padding: 21px 40px 20px;
+  padding: 20px 20px 20px;
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid var(--light-border);
   background-color: var(--color-black);
   z-index: 1000;
-  font-size: 13px;
+  transition: padding 0.3s ease;
 }
-.pageName {
-  font-family: 'Inter-Medium';
-  font-size: 24px;
-  font-weight: 500;
-  line-height: 29.05px;
-  text-align: left;
+
+.left {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.pageIcon {
+  height: 62px;
+  width: 62px;
+}
+
+.pageText {
+  font-family: "Poppins-Bold";
+  font-size: 20px;
   color: var(--color-white);
 }
+
+.pageSubText {
+  margin-left: 20px;
+  background-color: var(--color-subText);
+  padding: 2px;
+  border-radius: 3px;
+  color: var(--color-white);
+}
+
+// Right section styles
+.right {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+// Height compensator for mobile devices
 .heightCompensator {
   height: 81px;
 }
-img.logo {
-  width: 130px;
-  cursor: pointer;
-}
-.middle {
-  padding: 8px 20px;
-  background: var(--color-global);
-  border-radius: 6px;
-  color: black;
-  width: 45%;
-  text-align: center;
-  max-width: 600px;
-  .credit {
-    color: var(--color-blue);
-    font-family: Inter-SemiBold;
+
+// Make the header responsive
+@media (max-width: 1024px) {
+  .header {
+    padding: 15px 20px 15px;  // Adjust padding for smaller screens
   }
-  .creditLabel {
-    color: #000;
-    font-family: "Inter-Regular";
+
+  .pageText {
+    font-size: 18px;  // Adjust font size for smaller screens
+  }
+
+  .pageSubText {
+    font-size: 12px;  // Make the subtext smaller for mobile screens
+  }
+
+  .left {
+    gap: 10px;
+  }
+
+  .right {
+    gap: 10px;
+  }
+
+  .pageIcon {
+    height: 50px;  // Adjust icon size for smaller screens
+    width: 50px;
   }
 }
-.right {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+
+@media (max-width: 768px) {
+  .header {
+    padding: 10px 15px 10px;  // Reduce padding on even smaller screens
+  }
+
+  .pageText {
+    font-size: 16px;  // Reduce font size on smaller screens
+  }
+
+  .pageIcon {
+    height: 40px;  // Further reduce icon size
+    width: 40px;
+  }
+
+  .pageSubText {
+    font-size: 10px;  // Make subtext smaller for mobile screens
+    margin-left: 10px;
+  }
+
+  .left {
+    gap: 8px;
+  }
+
+  .right {
+    gap: 8px;
+  }
+
+  .heightCompensator {
+    height: 65px;  // Adjust compensator height for smaller screens
+  }
 }
-.wallet {
-  margin-right: 20px;
-}
-[data-theme="dark"] {
-  .creditLabel {
-    color: white;
+
+@media (max-width: 480px) {
+  .header {
+    padding: 10px 10px 10px;  // Further reduce padding on very small screens
+  }
+
+  .pageText {
+    font-size: 14px;  // Adjust font size to fit smaller screens
+  }
+
+  .pageIcon {
+    height: 35px;  // Make the icon smaller
+    width: 35px;
+  }
+
+  .pageSubText {
+    font-size: 8px;  // Make subtext even smaller for very small screens
+    margin-left: 5px;
+  }
+
+  .left {
+    gap: 5px;  // Reduce gap between left elements
+  }
+
+  .right {
+    gap: 5px;  // Reduce gap between right elements
+  }
+
+  .heightCompensator {
+    height: 55px;  // Adjust compensator height for very small screens
   }
 }

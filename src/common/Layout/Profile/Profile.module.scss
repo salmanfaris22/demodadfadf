@@ -1,6 +1,12 @@
 .profileWrap {
+
+  border-radius: 250px;
+  display: flex;
+  justify-content: center; 
+
   position: relative;
 }
+
 .profileImage {
   width: 44px;
   height: 44px;
@@ -9,13 +15,33 @@
   background-repeat: no-repeat;
   background-size: cover;
   cursor: pointer;
-  margin-top: -5px;
+
+}
+
+.proWrap{
+  display: flex;
+  gap: 5px;
+
+  align-items: center;
+}
+.dropDownMenu{
+  width: 18px;
+
+  height: 18px;
 }
 .defaultImg {
-  padding: 15px;
-  background-position: center;
+  padding: 10px;
   background-size: auto;
-  background-color: var(--color-global);
+  cursor: pointer;
+  border-radius: 50%;
+
+background-size: cover;
+}
+
+.logoutwrap {
+  position: absolute;
+  top: 100%;
+  right: 0; 
 }
 
 .logout {
@@ -26,19 +52,22 @@
   padding: 10px 20px 10px 10px;
   position: absolute;
   box-shadow: 2px 2px 4px 1px #d7d7d7;
-  right: 0px;
+  right: 0;
   top: 45px;
   border-radius: 10px;
   color: #5d5d5d;
   font-size: 14px;
   cursor: pointer;
+  
   &:hover {
     background-color: #f5f5f5;
   }
+
   img {
     height: 30px;
     width: auto;
     margin-right: 16px;
     margin-left: 10px;
   }
+
 }

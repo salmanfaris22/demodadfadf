@@ -1,9 +1,7 @@
 import React from "react";
 import classes from "./Notification.module.scss";
 
-interface NotificationProps {
-  theme?: "dark" | "light" | any;
-}
+
 
 const Notification: React.FC<NotificationProps> = ({ theme }) => {
   return (

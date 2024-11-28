@@ -1,0 +1,21 @@
+.questionsMark {
+    background: var(--color-notification-bg);
+    border-radius: 250px;
+    display: flex;
+    justify-content: center; 
+  
+    position: relative;
+  
+  }
+  
+  .questionsMarkIcon {
+    padding: 13px;
+    width: 44px;
+    height: 44px; 
+    background-size: cover;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 1px solid var(--color-notification);
+  }
+  
+  
