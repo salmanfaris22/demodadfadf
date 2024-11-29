@@ -14,7 +14,7 @@
   .cardIcon {
     background: var(--color-cardicon);
     width: 40px;
-    height: 40px;
+   min-height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -26,10 +26,10 @@
   }
   
   .textmain {
-    margin-top: 10px;
+    margin-top: 5px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 5px;
     flex-grow: 1;
   }
   
@@ -43,7 +43,7 @@
   .count {
     font-family: "Inter", sans-serif;
     font-weight: 600;
-    font-size: 28px;
+    font-size: 25px;
   }
   
   /* Media Queries for Responsiveness */

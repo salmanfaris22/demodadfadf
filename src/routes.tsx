@@ -23,7 +23,7 @@ const router = createBrowserRouter([
       </Suspense>
     ),
     children: [  {
-      path: "partners",
+      path: "",
       element: (
         <Suspense fallback={<Loading />}>
           <ParterInfo />

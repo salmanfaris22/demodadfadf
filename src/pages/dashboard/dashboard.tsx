@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { setCredentials, setUserDetails } from "../../store/authSlice";
+import { setCredentials, setUserDetails } from "../../store/auth";
 import Header from "../../common/Layout/Header/Header";
 import ScrollToTop from "../../common/Components/ScrollToTop/ScrollToTop";
 import classes from "./dashboard.module.scss";
