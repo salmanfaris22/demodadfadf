@@ -29,11 +29,11 @@ const authSlice = createSlice({
     },
     setToken(state, action) {
       state.isLoggedIn = true;
-      const { user, token } = action.payload;
-      state.user = user;
-      state.token = token;
+
+
+      state.token = action.payload;
       state.showLogin = false;
-      localStorage.setItem("token", token);
+      localStorage.setItem("token",  action.payload);
       localStorage.setItem("isLoggedIn", 'true');
     },
     setTempToken(state, action) {
@@ -67,6 +67,8 @@ const authSlice = createSlice({
       localStorage.removeItem("userDet");
       localStorage.removeItem("isLoggedIn");
       localStorage.removeItem("config");
+      state.user = null;
+
     },
     openModal: (state) => {
       state.showLogin = true;

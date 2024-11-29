@@ -4,14 +4,16 @@ import App from "./App.tsx";
 import "./index.scss";
 import { Provider } from "react-redux";
 import store from "./store/index.ts";
-import Toast from "./common/UI/Toast/Toast.tsx";
+import Toast from "./common/Components/Toast/Toast.tsx";
+
 
 
 createRoot(document.getElementById("root")!).render(
   <Provider store={store}>
     <StrictMode>
-      <Toast />
+      
       <App />
+      <Toast />
     </StrictMode>
   </Provider>
 );
