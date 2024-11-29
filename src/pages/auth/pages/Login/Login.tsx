@@ -102,6 +102,7 @@ const LoginPage: React.FC = () => {
 
   return (
     <PageAnimation>
+<<<<<<< HEAD
       <div className={classes.loginPage}>
         <div className={classes.wrap}>
           <h2>Login to your Account</h2>
@@ -157,6 +158,52 @@ const LoginPage: React.FC = () => {
         </div>
       </div>
     </PageAnimation>
+=======
+   <div className={classes.loginPage}>
+     <div className={classes.wrap}>
+      <h2>Login to your Account</h2>
+      <form onSubmit={handleLogin}>
+        <InputField
+          label="Email"
+          type="email"
+          placeholder="Eg: yourname@gmail.com"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <InputField
+          label="Password"
+          type={showPassword ? "text" : "password"}
+          placeholder="Enter your password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          showPasswordToggle
+          togglePasswordVisibility={() => setShowPassword((prev) => !prev)}
+        />
+        <div
+         onClick={() => {
+          redirect("/forgot");
+        }}
+        className={classes.subText}>Forgot Password ?</div>
+        <Button label="Login" type="submit" className={classes.loginButton} />
+       
+       <div className={classes.border}>
+        <div className={classes.line}></div>
+        <span className={classes.lineText}> Or </span>
+        <div className={classes.line}></div>
+    
+       </div>
+       <div
+       
+       className={classes.moreLoginBtn}><LoginWithGoogle/><img className={classes.facebookIcon} src="/assets/images/facebook.png" alt="facebook" /></div>
+<div 
+ onClick={() => {
+  redirect("/register");
+}}
+className={classes.subText2}><span>New user?</span> <span className={classes.subText}>Create account</span></div>
+      </form>
+    </div>
+   </div></PageAnimation>
+>>>>>>> 052fa32a0667b8d63bf7281aa1066b698e9fb5aa
   );
 };
 
