@@ -1,7 +1,6 @@
-export const config = {
-    apiBaseUrl: import.meta.env.VITE_APP_API_BASE_URL as string,
-    imagePath: import.meta.env.VITE_APP_IMAGE_PATH as string,
-    mint: import.meta.env.VITE_APP_MINT as string,
-    receiver: import.meta.env.VITE_APP_RECEIVER as string,
-    sseUrl: import.meta.env.VITE_APP_SSE_URL as string,
-};
+export const API_URL = process.env.REACT_APP_API_URL;
+export const IMAGE_URL = process.env.REACT_APP_IMAGE_URL;
+export const NFT_URL = process.env.REACT_APP_NFT_URL;
+export const NFT_HASH = process.env.REACT_APP_NFT_HASH;
+export const EXDEX_API_URL = process.env.REACT_APP_EXDEX_API_URL
+export const TENX_IMAGE_URL= process.env.REACT_APP_TENX_IMAGE_URL

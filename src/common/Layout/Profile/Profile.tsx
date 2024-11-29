@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { closeModal, openModal, logout } from "../../../store/auth";
+import { closeModal, openModal, logout } from "../../../store/authSlice";
 import classes from "./Profile.module.scss";
 import { useEffect, useState } from "react";
 const imageUrl = import.meta.env.VITE_APP_IMAGE_PATH; // Access Vite env variables
