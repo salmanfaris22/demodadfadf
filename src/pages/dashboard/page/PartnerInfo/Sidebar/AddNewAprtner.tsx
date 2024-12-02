@@ -6,6 +6,7 @@ import Button from "../../../../../common/Components/Button/Button";
 import { hideToastById, showToast } from "../../../../../store/toastSlice";
 import { partners } from "../../../../../services/partners";
 import { isValidEmail } from "../../../../../utils/emailValidator";
+import { AxiosError } from "axios";
 
 interface AddPartnerProps {
   setOpen: (value: boolean) => void;
@@ -99,15 +100,20 @@ const AddPartner: React.FC<AddPartnerProps> = ({ setOpen }) => {
       // Close the modal after submission
       setOpen(false);
     } catch (error: unknown) {
-      // Handle unknown error type
-      if (error instanceof Error && error.response?.data?.error) {
-        showToastMessage(error.response.data.error, "warning");
+      // Narrow the error type to AxiosError
+      if (error instanceof AxiosError && error.response) {
+        // Axios-specific error structure
+        showToastMessage(error.response.data.error || "An error occurred.", "warning");
+      } else if (error instanceof Error) {
+        // Generic error handling
+        showToastMessage(error.message || "An unexpected error occurred.", "warning");
       } else {
+        // Handle any other unknown error type
         showToastMessage("An unexpected error occurred.", "warning");
       }
     } finally {
       // Dynamically hide the toast (adjust the ID logic as needed)
-      dispatch(hideToastById(10));
+      dispatch(hideToastById(10)); // Replace with actual toast ID logic
     }
   };
   
