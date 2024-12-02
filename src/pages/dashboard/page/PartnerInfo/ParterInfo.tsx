@@ -9,7 +9,7 @@ import { dashboardItems } from '../../../../services/dashboard';
 type DashboardItem = {
   imageUrl: string;
   label: string;
-  totalcount: number | string; // Adjust type if needed
+  totalcount: number; // Adjust type if needed
 };
 
 const ParterInfo = () => {
@@ -20,12 +20,12 @@ const ParterInfo = () => {
       try {
         const res = await dashboardItems();
         setData([
-          { imageUrl: "/assets/images/card/partners.png", label: "Total Partners", totalcount: res.TotalPartners },
-          { imageUrl: "/assets/images/card/product.png", label: "Total Products", totalcount: res.TotalProduct },
-          { imageUrl: "/assets/images/card/activeChat.png", label: "Active Conversations", totalcount: res.ActiveConversations },
-          { imageUrl: "/assets/images/card/total.png", label: "Total Conversations", totalcount: res.TotalConversations },
-          { imageUrl: "/assets/images/card/trasaction.png", label: "Transaction Won", totalcount: res.TransactionWon },
-          { imageUrl: "/assets/images/card/revenue.png", label: "Revenue Generated", totalcount: res.RevenueGenerated },
+          { imageUrl: "/assets/images/card/partners.png", label: "Total Partners", totalcount: Number(res.TotalPartners )},
+          { imageUrl: "/assets/images/card/product.png", label: "Total Products", totalcount: Number(res.TotalProduct) },
+          { imageUrl: "/assets/images/card/activeChat.png", label: "Active Conversations", totalcount:Number( res.ActiveConversations) },
+          { imageUrl: "/assets/images/card/total.png", label: "Total Conversations", totalcount: Number(res.TotalConversations )},
+          { imageUrl: "/assets/images/card/trasaction.png", label: "Transaction Won", totalcount:Number( res.TransactionWon )},
+          { imageUrl: "/assets/images/card/revenue.png", label: "Revenue Generated", totalcount:Number( res.RevenueGenerated) },
         ]);
       } catch (error) {
         console.error("Error fetching dashboard items:", error);

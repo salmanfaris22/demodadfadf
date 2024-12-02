@@ -73,12 +73,12 @@ const AddPartner: React.FC<AddPartnerProps> = ({ setOpen }) => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const errorMessage = validateForm();
-
+  
     if (errorMessage) {
       showToastMessage(errorMessage, "warning");
       return;
     }
-
+  
     try {
       // Send FormData
       const response = await partners({
@@ -92,18 +92,25 @@ const AddPartner: React.FC<AddPartnerProps> = ({ setOpen }) => {
         image,
       });
       console.log("Partner Data Submitted: ", response);
-
+  
       // Show success toast
       showToastMessage("Partner added successfully.", "success");
-
+  
       // Close the modal after submission
       setOpen(false);
-    } catch (error) {
-      showToastMessage(error.response.data.error, "warning");
+    } catch (error: unknown) {
+      // Handle unknown error type
+      if (error instanceof Error && error.response?.data?.error) {
+        showToastMessage(error.response.data.error, "warning");
+      } else {
+        showToastMessage("An unexpected error occurred.", "warning");
+      }
     } finally {
-      dispatch(hideToastById(10));  // Example toast hiding logic
+      // Dynamically hide the toast (adjust the ID logic as needed)
+      dispatch(hideToastById(10));
     }
   };
+  
 
   return (
     <div className={classes.sideBarOver}>
