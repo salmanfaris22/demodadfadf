@@ -6,7 +6,6 @@ import Button from "../../../../../common/Components/Button/Button";
 import { hideToastById, showToast } from "../../../../../store/toastSlice";
 import { partners } from "../../../../../services/partners";
 import { isValidEmail } from "../../../../../utils/emailValidator";
-import { AxiosError } from "axios";
 
 interface AddPartnerProps {
   setOpen: (value: boolean) => void;
@@ -70,15 +69,16 @@ const AddPartner: React.FC<AddPartnerProps> = ({ setOpen }) => {
       setImage(file);
     }
   };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const errorMessage = validateForm();
-  
+
     if (errorMessage) {
       showToastMessage(errorMessage, "warning");
       return;
     }
-  
+
     try {
       // Send FormData
       const response = await partners({
@@ -92,26 +92,16 @@ const AddPartner: React.FC<AddPartnerProps> = ({ setOpen }) => {
         image,
       });
       console.log("Partner Data Submitted: ", response);
-  
+
       // Show success toast
       showToastMessage("Partner added successfully.", "success");
-  
+
       // Close the modal after submission
       setOpen(false);
-    } catch (error: unknown) {
-      if (axios.isAxiosError(error) && error.response) {
-        // Axios error handling
-        showToastMessage(error.response.data.error || "An error occurred.", "warning");
-      } else if (error instanceof Error) {
-        // General error handling
-        showToastMessage(error.message || "An unexpected error occurred.", "warning");
-      } else {
-        // Handle unknown error type
-        showToastMessage("An unexpected error occurred.", "warning");
-      }
+    } catch (error: any) {
+      showToastMessage(error.response.data.error, "warning");
     } finally {
-      // Dynamically hide the toast (adjust the ID logic as needed)
-      dispatch(hideToastById(10));
+      dispatch(hideToastById(10));  // Example toast hiding logic
     }
   };
 
