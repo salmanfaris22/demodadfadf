@@ -35,7 +35,7 @@ const LoginPage: React.FC = () => {
   // Handle login submission
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
-
+  
     // Validation check
     if (!email) {
       dispatch(
@@ -47,7 +47,7 @@ const LoginPage: React.FC = () => {
       );
       return;
     }
-
+  
     if (!isValidEmail(email)) {
       dispatch(
         showToast({
@@ -58,7 +58,7 @@ const LoginPage: React.FC = () => {
       );
       return;
     }
-
+  
     if (!password) {
       dispatch(
         showToast({
@@ -69,11 +69,11 @@ const LoginPage: React.FC = () => {
       );
       return;
     }
-
+  
     try {
       const data: LoginData = { email, password };
       const response = await login(data);
-
+  
       dispatch(setToken(response.token));
       dispatch(setUser({ email: response.email, user_role: response.user_role }));
       dispatch(
@@ -84,20 +84,33 @@ const LoginPage: React.FC = () => {
         })
       );
       redirect("/dashboard");
-    } catch (error) {
-      console.log("Login failed:", error.response.data.error);
-      dispatch(
-        showToast({
-          message: error.response.data.error,
-          type: "warning",
-          timeout: 5000,
-        })
-      );
-    }finally{
+    } catch (error: unknown) {
+      // Narrowing the error type using instanceof to check for a known error shape
+      if (error instanceof Error) {
+        console.log("Login failed:", error.message); // Adjust to access the error message
+        dispatch(
+          showToast({
+            message: error.message, // Use the error message
+            type: "warning",
+            timeout: 5000,
+          })
+        );
+      } else {
+        // If error is not an instance of Error, handle it gracefully
+        console.log("Login failed with unknown error:", error);
+        dispatch(
+          showToast({
+            message: "An unknown error occurred.",
+            type: "warning",
+            timeout: 5000,
+          })
+        );
+      }
+    } finally {
       dispatch(hideToastById(10));
-
     }
   };
+  
 
   return (
     <PageAnimation>

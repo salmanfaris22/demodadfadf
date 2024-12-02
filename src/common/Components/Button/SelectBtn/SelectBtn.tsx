@@ -4,7 +4,9 @@ import styles from "./SelectButton.module.scss";
 interface SelectButtonProps {
   options: string[];
   onSelect: (selectedOption: string) => void;
+  className?: string; // Optional className prop
 }
+
 
 const SelectButton: React.FC<SelectButtonProps> = ({ options, onSelect }) => {
   const [selected, setSelected] = useState<string>("");

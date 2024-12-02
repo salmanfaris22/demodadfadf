@@ -158,40 +158,41 @@ const demoData: Partner[] = [
     // Repeat as necessary for all the other partners
   ];
   
-const AllPartner = () => {
+  const AllPartner = () => {
     const handleSelect = (selectedOption: string) => {
-        console.log("Selected Option:", selectedOption);
-      };
-      const handleSearch = (query: string) => {
-        console.log("Search Query:", query);
-      };
-  return (
-    <div className={classes.mainWrap}>
-      
-         <div className={classes.headWrap}> 
-      <div className={classes.headtext}>All Partners (119)</div>
-    <div className={classes.selectWrap}>
-    <SelectButton options={["Most Popular", "Most Recent ", "Most products","Join Date"]} onSelect={handleSelect} className={classes.btn}/>
-    <div>
-    <SearchInput
-        placeholder="Search items..."
-        onSearch={handleSearch}
-        iconSrc="/assets/images/icons/search.png" // Path to your search icon image
-      />
-    </div>
-    </div>
-    </div>
+      console.log("Selected Option:", selectedOption);
+    };
   
-         <div className={classes.topContainer}>  {/* Ensure the class name is correct */}
-      <Table data={demoData} rowsPerPage={6} /> {/* Reuse your Table component */}
-      
-    </div>
-    
-    </div>
-   
-  );
-}
-
-export default AllPartner;
+    const handleSearch = (query: string) => {
+      console.log("Search Query:", query);
+    };
+  
+    return (
+      <div className={classes.mainWrap}>
+        <div className={classes.headWrap}>
+          <div className={classes.selectWrap}>
+            <SelectButton
+              options={["Most Popular", "Most Recent", "Most Products", "Join Date"]}
+              onSelect={handleSelect}
+              // className={classes.btn} // Now passing the className prop here
+            />
+            <div>
+              <SearchInput
+                placeholder="Search items..."
+                onSearch={handleSearch}
+                iconSrc="/assets/images/icons/search.png" // Path to your search icon image
+              />
+            </div>
+          </div>
+        </div>
+  
+        <div className={classes.topContainer}>
+          <Table data={demoData} rowsPerPage={6} /> {/* Reuse your Table component */}
+        </div>
+      </div>
+    );
+  };
+  
+  export default AllPartner;
 
 
