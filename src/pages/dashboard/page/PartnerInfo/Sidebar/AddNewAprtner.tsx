@@ -111,7 +111,7 @@ const AddPartner: React.FC<AddPartnerProps> = ({ setOpen }) => {
       }
     } finally {
       // Dynamically hide the toast (adjust the ID logic as needed)
-      dispatch(hideToastById(someToastId));
+      dispatch(hideToastById(10));
     }
   };
 
