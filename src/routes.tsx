@@ -45,7 +45,7 @@ const router = createBrowserRouter([
     element: <Navigate to={routers.dashboard} replace />,
   },
   {
-    path: "/vite-react-router/",
+    path: "/demodadfadf/",
     element: (
       <Suspense fallback={<Loading />}>
         <Authentication />

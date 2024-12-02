@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://salmanfaris.github.io/demodadfadf",
+  "homepage": "https://salmanfaris22.github.io/demodadfadf/",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
