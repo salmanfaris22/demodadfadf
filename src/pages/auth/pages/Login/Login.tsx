@@ -51,6 +51,7 @@ const LoginPage: React.FC = () => {
   // Call validateForm whenever email or password changes
   useEffect(() => {
     validateForm();
+    console.log(isFormValid)
   }, [email, password]);
 
   // Handle login submission
@@ -95,10 +96,13 @@ const LoginPage: React.FC = () => {
   
     try {
       const data: LoginData = { email, password };
-      const response: LoginResponse = await login(data);
+      const response = await login(data);
+
+      // Ensuring response is of type LoginResponse
+      const loginResponse: LoginResponse = response as LoginResponse;
   
-      dispatch(setToken(response.token));
-      dispatch(setUser({ email: response.email, user_role: response.user_role }));
+      dispatch(setToken(loginResponse.token));
+      dispatch(setUser({ email: loginResponse.email, user_role: loginResponse.user_role }));
       dispatch(
         showToast({
           message: "Login successful!",
@@ -169,7 +173,7 @@ const LoginPage: React.FC = () => {
               label={loading ? "Loading..." : "Login"} 
               type="submit" 
               className={classes.loginButton} 
-              disabled={!isFormValid || loading} 
+              // disabled={!isFormValid || loading} 
             />
             <div className={classes.border}>
               <div className={classes.line}></div>
