@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import InputField from "../../../../common/Components/InputField/InputField";
 import Button from "../../../../common/Components/Button/Button";
 import LoginWithGoogle from "../LoginWithGoogle/LoginWithGoogle";
@@ -11,18 +11,25 @@ import { setToken, setUser } from "../../../../store/authSlice";
 import { hideToastById, showToast } from "../../../../store/toastSlice";
 import { isValidEmail } from "../../../../utils/emailValidator";
 
-
-
 // Type for form data
 interface LoginData {
   email: string;
   password: string;
 }
 
+// Type for the login API response
+interface LoginResponse {
+  token: string;
+  email: string;
+  user_role: string;
+}
+
 const LoginPage: React.FC = () => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [showPassword, setShowPassword] = useState<boolean>(false);
+  const [isFormValid, setIsFormValid] = useState<boolean>(false);
+  const [loading, setLoading] = useState<boolean>(false);
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -31,6 +38,20 @@ const LoginPage: React.FC = () => {
   const redirect = (url: string) => {
     navigate(url);
   };
+
+  // Validate form inputs
+  const validateForm = () => {
+    if (email && isValidEmail(email) && password) {
+      setIsFormValid(true);
+    } else {
+      setIsFormValid(false);
+    }
+  };
+
+  // Call validateForm whenever email or password changes
+  useEffect(() => {
+    validateForm();
+  }, [email, password]);
 
   // Handle login submission
   const handleLogin = async (e: React.FormEvent) => {
@@ -69,10 +90,12 @@ const LoginPage: React.FC = () => {
       );
       return;
     }
+
+    setLoading(true); // Start loading state
   
     try {
       const data: LoginData = { email, password };
-      const response = await login(data);
+      const response: LoginResponse = await login(data);
   
       dispatch(setToken(response.token));
       dispatch(setUser({ email: response.email, user_role: response.user_role }));
@@ -107,10 +130,10 @@ const LoginPage: React.FC = () => {
         );
       }
     } finally {
+      setLoading(false); // Stop loading state
       dispatch(hideToastById(10));
     }
   };
-  
 
   return (
     <PageAnimation>
@@ -142,7 +165,12 @@ const LoginPage: React.FC = () => {
             >
               Forgot Password?
             </div>
-            <Button label="Login" type="submit" className={classes.loginButton} />
+            <Button 
+              label={loading ? "Loading..." : "Login"} 
+              type="submit" 
+              className={classes.loginButton} 
+              disabled={!isFormValid || loading} 
+            />
             <div className={classes.border}>
               <div className={classes.line}></div>
               <span className={classes.lineText}> Or </span>
