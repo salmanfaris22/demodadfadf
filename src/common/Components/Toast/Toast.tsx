@@ -1,5 +1,4 @@
-// ToastComponent.tsx
-import React from "react";
+
 import ReactDOM from "react-dom";
 import { useSelector } from "react-redux";
 import classes from "./Toast.module.scss";

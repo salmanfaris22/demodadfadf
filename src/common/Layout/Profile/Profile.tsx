@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { closeModal, openModal, logout } from "../../../store/auth";
+import {  openModal, logout } from "../../../store/auth";
 import classes from "./Profile.module.scss";
 import { useEffect, useState } from "react";
 const imageUrl = import.meta.env.VITE_APP_IMAGE_PATH; // Access Vite env variables
@@ -9,7 +9,7 @@ const Profile = () => {
   const isLoggedIn = useSelector((state: any) => state.auth.token);
 
   const dispatch = useDispatch();
-  const showAuth = useSelector((state: any) => state.auth.showLogin);
+  // const showAuth = useSelector((state: any) => state.auth.showLogin);
   const [showLogout, setShowLogout] = useState(false);
 
   useEffect(() => {

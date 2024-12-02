@@ -3,7 +3,7 @@ import { API_URL } from '../config';
 
 import store from '../store';
 
-import { clearUserAndToken, selectToken } from '../store/authSlice';
+import { clearUserAndToken } from '../store/authSlice';
 import { showToast } from '../store/toastSlice';
 
 

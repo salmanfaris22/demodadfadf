@@ -2,16 +2,16 @@ import Notification from "../Notification/Notification";
 import Profile from "../Profile/Profile";
 
 import classes from "./Header.module.scss";
-import { useNavigate } from "react-router-dom";
+
 
 import Questionsmark from "../Questionsmark/Questionsmark";
 
 
 const Header = () => {
-  const navigate = useNavigate();
-  const goTo = (route: string) => {
-    navigate(route);
-  };
+  // const navigate = useNavigate();
+  // const goTo = (route: string) => {
+  //   navigate(route);
+  // };
 
  return (
     <>
