@@ -18,7 +18,7 @@ const ParterInfo = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await dashboardItems();
+        const res:any = await dashboardItems();
         setData([
           { imageUrl: "/assets/images/card/partners.png", label: "Total Partners", totalcount: Number(res.TotalPartners )},
           { imageUrl: "/assets/images/card/product.png", label: "Total Products", totalcount: Number(res.TotalProduct) },

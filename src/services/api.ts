@@ -2,12 +2,8 @@ import axios from 'axios';
 import { API_URL } from '../config';
 
 import store from '../store';
-
 import { clearUserAndToken } from '../store/authSlice';
 import { showToast } from '../store/toastSlice';
-
-
-
 
 const api = axios.create({
     baseURL: API_URL,
@@ -15,13 +11,21 @@ const api = axios.create({
 
 api.interceptors.request.use(
     (config) => {
-        const token = localStorage.getItem("token")
-
-        console.log("ad;lfkjahfgjahkl;")
-        console.log(token)
+        const token = localStorage.getItem('token');
+  
+        console.log('ad;lfkjahfgjahkl;');
+        console.log(token);
+  
         if (token) {
-            config.headers['Authorization'] = `Bearer ${token}`;
+            // Safely check for headers and set the Authorization token
+            if (config.headers) {
+                config.headers['Authorization'] = `Bearer ${token}`;
+            } else {
+                // If headers don't exist, initialize it as an empty object and add Authorization
+                config.headers = { 'Authorization': `Bearer ${token}` };
+            }
         }
+  
         return config;
     },
     (error) => {
@@ -43,7 +47,7 @@ api.interceptors.response.use(
                     break;
                 case 401:
                     console.error('Unauthorized: Please log in to continue.');
-                    store.dispatch(clearUserAndToken())
+                    store.dispatch(clearUserAndToken());
                     store.dispatch(
                         showToast({
                             message: 'Please log in to continue',
@@ -51,7 +55,6 @@ api.interceptors.response.use(
                             timeout: 5000,
                         })
                     );
-                    // window.location.replace('/login');
                     break;
                 case 500:
                     console.error('Internal Server Error');
