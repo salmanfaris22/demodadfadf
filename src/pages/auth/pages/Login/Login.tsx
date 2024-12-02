@@ -36,7 +36,7 @@ const LoginPage: React.FC = () => {
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Validation checks
+    // Validation check
     if (!email) {
       dispatch(
         showToast({
