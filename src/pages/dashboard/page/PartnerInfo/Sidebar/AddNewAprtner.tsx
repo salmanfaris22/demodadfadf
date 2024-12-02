@@ -23,13 +23,13 @@ const AddPartner: React.FC<AddPartnerProps> = ({ setOpen }) => {
   const [description, setDescription] = useState("");
   const [image, setImage] = useState<File | null>(null);
 
-  // Reusable Toast
+  // Reusable Toast //
   const showToastMessage = (message: string, type: "success" | "error" | "warning") => {
     dispatch(
       showToast({
         message,
         type,
-        timeout: 5000,
+        timeout: 3000,
       })
     );
   };
