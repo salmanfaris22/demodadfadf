@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Setup Node
-        uses: actions/setup-node@v2  # Updated to v2
+        uses: actions/setup-node@v2  # Ensure this is the latest v2 version
         with:
           node-version: 18
 
